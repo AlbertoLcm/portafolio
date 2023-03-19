@@ -1,0 +1,130 @@
+section{
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inicio{
+  position: relative;
+  margin-left: 40px;
+}
+.inicio::before{
+  position: absolute;
+  left: -20px;
+  top: 20px;
+  content: '<html>';
+  font-family: 'Fasthand', cursive;
+  font-size: 22px;
+  color: #5f5f5f;
+}
+.inicio::after{
+  position: absolute;
+  left: 0px;
+  top: 60px;
+  content: '<body>';
+  font-family: 'Fasthand', cursive;
+  font-size: 22px;
+  color: #5f5f5f;
+}
+
+.title{
+  display: flex;
+  align-items: center;
+  font-family: 'Righteous', cursive;
+  height: 80px;
+  font-size: 80px;
+  font-weight: 800;
+}
+.title span{
+  color: #00e1ff;
+  margin-left: 15px;
+  text-shadow: 0px 0px 15px #00adc4;
+  cursor: pointer;
+  transition: all 0.3s;
+  animation: blink 2s infinite;
+}
+.title span:hover{
+  color: #52ebff;
+  text-shadow: 0px 0px 30px #00adc4;
+}
+
+@keyframes blink{
+  0%{
+    text-shadow: 0px 0px 15px #00adc4;
+  }
+  50%{
+    text-shadow: 0px 0px 30px #00adc4;
+    color: #52ebff;
+  }
+  100%{
+    text-shadow: 0px 0px 15px #00adc4;
+  }
+}
+
+.buttons{
+  display: flex;
+  gap: 15px;
+}
+
+.codeH1{
+  position: relative;
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+.codeH1::before{
+  position: absolute;
+  left: -20px;
+  top: -26px;
+  content: '<h1>';
+  font-family: 'Fasthand', cursive;
+  font-size: 22px;
+  color: #5f5f5f;
+}
+.codeH1::after{
+  position: absolute;
+  left: -20px;
+  bottom: -26px;
+  content: '</h1>';
+  font-family: 'Fasthand', cursive;
+  font-size: 22px;
+  color: #5f5f5f;
+}
+.codeP{
+  position: relative;
+  margin-left: 20px;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  color: #5f5f5f;
+}
+.codeP::before{
+  position: absolute;
+  left: -20px;
+  top: -26px;
+  content: '<p>';
+  font-family: 'Fasthand', cursive;
+  font-size: 22px;
+  color: #5f5f5f;
+}
+.codeP::after{
+  position: absolute;
+  left: -20px;
+  bottom: -26px;
+  content: '</p>';
+  font-family: 'Fasthand', cursive;
+  font-size: 22px;
+  color: #5f5f5f;
+}
+
+/* Pruebas */
+.image{
+  width: 300px;
+  height: auto;
+  filter: drop-shadow(0px 0px 10px #f3f3f3);
+}
+.image img{
+  width: 100%;
+  height: auto;
+}
