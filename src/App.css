@@ -1,7 +1,14 @@
 #root {
   max-width: 1500px;
   margin: 0 auto;
+  position: relative;
 }
 main{
-  padding-right: 150px;
+  padding-right: 200px;
+}
+
+@media screen and (max-width: 985px) {
+  main{
+    padding-right: 0px;
+  }
 }

@@ -34,7 +34,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #f3f3f3bd;
 }
-
+/* Selection */
 ::selection {
   background-color: #f3f3f32a;
   color: #00adc4;
@@ -48,13 +48,12 @@ p {
   font-size: 1.2em;
   margin: 0;
 }
-
 button{
-  width: 170px;
-  border-radius: 20px;
+  width: 10.625em;
+  border-radius: 1.25rem;
   font-family: 'Quicksand';
-  padding: 10px;
-  font-size: 18px;
+  padding: 0.625rem;
+  font-size: 1.125rem;
   border: none;
   cursor: pointer;
   user-select: none;
@@ -85,10 +84,10 @@ button:active{
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+}
+
+@media screen and (max-width: 768px) {
+  body{
+    font-size: 10px;
   }
 }
