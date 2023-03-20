@@ -26,8 +26,6 @@ function App() {
           </div>
         </section>
 
-        <img src={svg} alt="" className={styles.svg}/>
-
         <section id='acerca_de_mi' className={styles.about}>
           <div>
             <h2 className={styles.codeH2}>Acerca de mí</h2>
