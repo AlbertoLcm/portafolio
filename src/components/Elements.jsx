@@ -10,7 +10,7 @@ export const Sector = ({ children }) => <StyledSector> {children} </StyledSector
 export const Main = ({ children }) => <StyledMain> {children} </StyledMain>
 export const Body = ({ children }) => <StyledBody> {children} </StyledBody>
 export const H1 = ({ children }) => <StyledH1> {children} </StyledH1>
-export const H2 = ({ children }) => <StyledH2> {children} </StyledH2>
+export const H2 = ({ children }) => <StyledH2 > {children} </StyledH2>
 
 const StyledMain = styled.div`
   position: relative;
@@ -84,6 +84,9 @@ const StyledH1 = styled.h1`
 const StyledH2 = styled.h2`
   position: relative;
   padding: 20px 0px 20px 10px;
+  background: linear-gradient(90deg, #BD0C7A, #00E1FF);
+  -webkit-background-clip: text;
+  color: transparent;
   &::before{
     position: absolute;
     left: 0px;
@@ -92,6 +95,7 @@ const StyledH2 = styled.h2`
     font-family: 'Fasthand', cursive;
     font-size: 1.375rem;
     color: #5f5f5f;
+    text-shadow: none;
   }
   &::after{
     position: absolute;
@@ -101,6 +105,7 @@ const StyledH2 = styled.h2`
     font-family: 'Fasthand', cursive;
     font-size: 1.375rem;
     color: #5f5f5f;
+    text-shadow: none;
   }
 `;
 const StyledP = styled.p`

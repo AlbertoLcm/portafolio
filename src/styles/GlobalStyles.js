@@ -15,6 +15,10 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+
+    --color-pink: #BD0C7A;
+    --color-blue: #00E1FF;
+    --color-orange: orange;
   }
 
   body {
@@ -50,7 +54,7 @@ const GlobalStyles = createGlobalStyle`
   }
   h2 {
     font-family: 'Righteous';
-    font-size: 2.4em;
+    font-size: 2.8em;
     margin: 0;
   }
   p {

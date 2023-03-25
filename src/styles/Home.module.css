@@ -6,8 +6,10 @@
 /* ------------------------------------
   1. Main Tittle
   2. Buttons Container
-  3. Sections
-    3.1 Home
+  3. Image
+  4. Sections
+    4.1 Home
+    4.2 About
 ------------------------------------ */
 
 /* Main Title */
@@ -21,15 +23,15 @@
     user-select: none;
   }
   .tittle__color{
-    color: #00e1ff;
+    color: var(--color-blue);
     margin-left: 0.9375rem;
-    text-shadow: 0px 0px 15px #00adc4;
+    text-shadow: 0px 0px 15px var(--color-blue);
     cursor: pointer;
     transition: all 0.3s;
   }
   .tittle__color:hover{
     color: #52ebff;
-    text-shadow: 0px 0px 30px #00adc4;
+    text-shadow: 0px 0px 30px var(--color-blue);
   }
 /* End Main Title */
 
@@ -42,14 +44,61 @@
   }
 /* End Buttons Container */
 
+/* Image */
+  .image{
+    width: calc(350px - 6px);
+    height: auto;
+    border-radius: 20px;
+    border: 3px solid var(--color-pink);
+    box-shadow: 0px 0px 30px var(--color-pink);
+    object-fit: cover;
+    object-position: center;
+  }
+/* End Image */
+
 /* Sections */
   /* Home */
     .home{
-      height: 100vh;
+      position: relative;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       margin-top: -90px;
     }
   /* End Home */
+  /* About */
+    .about{
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      align-content: center;
+      gap: 20px;
+    }
+    .about__description{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .image__container{
+      display: flex;
+      justify-content: center;
+    }
+  /* End About */
 /* End Sections */
+
+/* 
+TODO: ADD this code in some component
+."your__component"::before{
+  position: absolute;
+  content: '';
+  top: 0px;
+  left: -60px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #00e1ffaf;
+  filter: blur(200px);
+} 
+*/
