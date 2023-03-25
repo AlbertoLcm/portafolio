@@ -1,64 +1,84 @@
-import './App.css'
+import { useState } from 'react'
+import { H1, H2, P, Section, Sector, Main, Body } from './components/Elements'
+import { ButtonPrimary, ButtonSecundary } from './components/Buttons'
+import { ThemeProvider } from 'styled-components'
 import styles from './styles/Home.module.css'
+import image from './assets/images/test.png'
+import Typewriter from 'typewriter-effect'
 import Header from './components/Header'
-import image from './assets/images/me.jpg'
-import svg from './assets/images/Untitled.svg'
+import colors from './colors'
+import GlobalStyles from './styles/GlobalStyles'
+import './App.css'
 
 function App() {
+
+  const [theme, setTheme] = useState('dark');
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
   return (
-    <div className="App">
 
-      <Header />
-      <main>
+    <ThemeProvider theme={colors[theme]}>
+      <GlobalStyles />
+      <div className="App">
 
+        <Header />
 
-        <section id='inicio' className={styles.inicio}>
-          <div className={styles.codeH1}>
-            <p className={styles.title}>Hola,</p>
-            <p className={styles.title}>Soy <span>Alberto</span>,</p>
-            <p className={styles.title}>Desarrollador Web.</p>
-          </div>
-          <p className={styles.codePGray}>Front-End y Back-End Developer</p>
+        <Main>
+          <Body>
+            <section className={styles.home}>
+              <H1>
+                <p className={styles.title}>Hola,</p>
+                <p className={styles.title}>Soy <span className={styles.tittle__color}>Alberto</span>,</p>
+                <div className={styles.title}>
+                  <Typewriter
+                    options={{
+                      strings: ['Desarrollador Web.', 'Web developer.'],
+                      autoStart: true,
+                      loop: true,
+                    }}
+                  />
+                </div>
+              </H1>
+              <P gray={true}>Front-End y Back-End Developer</P>
+              <div className={styles.buttons__container}>
+                <ButtonPrimary> Contactame </ButtonPrimary>
+                <ButtonSecundary> CV </ButtonSecundary>
+              </div>
+            </section>
 
-          <div className={styles.buttons}>
-            <button className='buttonPrimary'>Contactame</button>
-            <button className='btnSecun'>CV</button>
-          </div>
-        </section>
+            <Sector id='acerca_de_mi' className={styles.about}>
+              <H2>Acerca de mí</H2>
+              <P>
+                Soy un desarrollador frontend apasionado por la creación de
+                experiencias web intuitivas y atractivas. Mientras continúo
+                desarrollando mis habilidades en el frontend, estoy
+                emocionado de explorar nuevas oportunidades en el backend
+                para poder ofrecer soluciones web más completas y efectivas.
+              </P>
+            </Sector>
 
-        <section id='acerca_de_mi' className={styles.about}>
-          <div>
-            <h2 className={styles.codeH2}>Acerca de mí</h2>
-            <p className={styles.codeP}>
-              Soy un desarrollador frontend apasionado por la creación de
-              experiencias web intuitivas y atractivas. Mientras continúo
-              desarrollando mis habilidades en el frontend, estoy
-              emocionado de explorar nuevas oportunidades en el backend
-              para poder ofrecer soluciones web más completas y efectivas.
-            </p>
-          </div>
-          <div className={styles.image}>
-            <img src={image} alt="me" />
-          </div>
-        </section>
+            <Sector id='proyectos'>
+              <Section>Probando</Section>
+            </Sector>
 
-        <section id='proyectos'>
-        </section>
+            <Sector id='habilidades'>
+              <h2>habilidades</h2>
+            </Sector>
 
-        <section id='habilidades'>
-          <h2>habilidades</h2>
-        </section>
+            <Sector id='testimonios'>
+              <h2>Testimonios</h2>
+            </Sector>
 
-        <section id='testimonios'>
-          <h2>Testimonios</h2>
-        </section>
-
-        <section id='contacto'>
-          <h2>Contacto</h2>
-        </section>
-      </main>
-
-    </div>
+            <Sector id='contacto'>
+              <h2>Contacto</h2>
+            </Sector>
+          </Body>
+        </Main>
+      </div>
+    </ThemeProvider>
   )
 }
 
