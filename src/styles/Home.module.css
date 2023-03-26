@@ -1,261 +1,104 @@
-section{
-  padding: 1.25rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+/*
+  * My porfolio by @Lcm
+  * Version: 1.0.0
+  * Copyright 2023 @Lcm
+*/
+/* ------------------------------------
+  1. Span Tittle
+  2. Buttons Container
+  3. Image
+  4. Sections
+    4.1 Home
+    4.2 About
+------------------------------------ */
 
-.inicio{
-  position: relative;
-  margin-left: 2.5rem;
-}
-.svg{
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-.about{
-  position: relative;
-  margin-left: 40px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-content: center;
-}
-.inicio::before{
-  position: absolute;
-  left: -1.25rem;
-  top: 20px;
-  content: '<html>';
-  font-family: 'Fasthand', cursive;
-  font-size: 22px;
-  color: #5f5f5f;
-}
-.inicio::after{
-  position: absolute;
-  left: 0px;
-  top: 50px;
-  content: '<body>';
-  font-family: 'Fasthand', cursive;
-  font-size: 1.375rem;
-  color: #5f5f5f;
-}
-
-.title{
-  display: flex;
-  align-items: center;
-  font-family: 'Righteous', cursive;
-  height: 5rem;
-  font-size: 5rem;
-  font-weight: 800;
-}
-.title span{
-  color: #00e1ff;
-  margin-left: 0.9375rem;
-  text-shadow: 0px 0px 15px #00adc4;
-  cursor: pointer;
-  transition: all 0.3s;
-  animation: blink 2s infinite;
-}
-.title span:hover{
-  color: #52ebff;
-  text-shadow: 0px 0px 30px #00adc4;
-}
-
-@keyframes blink{
-  0%{
-    text-shadow: 0px 0px 15px #00adc4;
+/* Span Title */
+  .tittle__color{
+    color: var(--color-blue);
+    text-shadow: 0px 0px 15px var(--color-blue);
+    cursor: pointer;
+    transition: all 0.3s;
   }
-  50%{
-    text-shadow: 0px 0px 30px #00adc4;
+  .tittle__color:hover{
     color: #52ebff;
+    text-shadow: 0px 0px 30px var(--color-blue);
   }
-  100%{
-    text-shadow: 0px 0px 15px #00adc4;
-  }
-}
+/* End Span Title */
 
-.buttons{
-  display: flex;
-  gap: 0.9375em;
-}
+/* Buttons Container */
+  .buttons__container{
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+/* End Buttons Container */
 
-.codeH1{
-  position: relative;
-  margin-left: 1.25rem;
-  margin-bottom: 1.875rem;
-}
-.codeH1::before{
-  position: absolute;
-  left: -1.25rem;
-  top: -1.625rem;
-  content: '<h1>';
-  font-family: 'Fasthand', cursive;
-  font-size: 1.375rem;
-  color: #5f5f5f;
-}
-.codeH1::after{
-  position: absolute;
-  left: -1.25rem;
-  bottom: -1.625rem;
-  content: '</h1>';
-  font-family: 'Fasthand', cursive;
-  font-size: 1.375rem;
-  color: #5f5f5f;
-}
-.codePGray{
-  position: relative;
-  margin-left: 1.25rem;
-  font-size: 1.25rem;
-  margin-top: 1.25rem;
-  margin-bottom: 2.5rem;
-  color: #5f5f5f;
-}
-.codePGray::before{
-  position: absolute;
-  left: -1.25rem;
-  top: -1.625rem;
-  content: '<p>';
-  font-family: 'Fasthand', cursive;
-  font-size: 1.375rem;
-  color: #5f5f5f;
-}
-.codePGray::after{
-  position: absolute;
-  left: -1.25rem;
-  bottom: -1.625rem;
-  content: '</p>';
-  font-family: 'Fasthand', cursive;
-  font-size: 1.375rem;
-  color: #5f5f5f;
-}
-.codeP{
-  position: relative;
-  margin-left: 1.25rem;
-  font-size: 1.25rem;
-  margin-top: 1.25rem;
-  margin-bottom: 2.5rem;
-}
-.codeP::before{
-  position: absolute;
-  left: -1.25rem;
-  top: -1.625rem;
-  content: '<p>';
-  font-family: 'Fasthand', cursive;
-  font-size: 1.375rem;
-  color: #5f5f5f;
-}
-.codeP::after{
-  position: absolute;
-  left: -1.25rem;
-  bottom: -1.625rem;
-  content: '</p>';
-  font-family: 'Fasthand', cursive;
-  font-size: 1.375rem;
-  color: #5f5f5f;
-}
+/* Image */
+  .image{
+    position: relative;
+    width: calc(350px - 6px);
+    height: auto;
+    border-radius: 20px;
+    border: 3px solid var(--color-pink);
+    box-shadow: 0px 0px 30px var(--color-pink);
+    object-fit: cover;
+    object-position: center;
+  }
+/* End Image */
 
-.codeSection{
-  position: relative;
-  margin-left: 1.25rem;
-  font-size: 1.25rem;
-  margin-top: 1.25rem;
-  margin-bottom: 2.5rem;
-  color: #5f5f5f;
-}
-.codeSection::before{
-  position: absolute;
-  left: -1.25rem;
-  top: -1.625rem;
-  content: '<section>';
-  font-family: 'Fasthand', cursive;
-  font-size: 1.375rem;
-  color: #5f5f5f;
-}
-.codeSection::after{
-  position: absolute;
-  left: -1.25rem;
-  bottom: -1.625rem;
-  content: '</section>';
-  font-family: 'Fasthand', cursive;
-  font-size: 1.375rem;
-  color: #5f5f5f;
-}
+/* Sections */
+  /* Home */
+    .home{
+      position: relative;
+      min-height: 800px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: -90px;
+    }
+  /* End Home */
+  /* About */
+    .about{
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      align-content: center;
+      gap: 20px;
+    }
+    .about__description{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .image__container{
+      display: flex;
+      justify-content: center;
+    }
+  /* End About */
+/* End Sections */
 
-.codeH2{
-  position: relative;
-  margin-left: 1.25rem;
-  font-size: 4rem;
-  margin-top: 1.25rem;
-  margin-bottom: 50px;
-  font-family: 'Righteous', cursive;
-}
-.codeH2::before{
+/* Responsive */
+  @media (max-width: 768px) {
+    .buttons__container{
+      justify-content: center;
+    }
+  }
+/* End Responsive */
+
+/* 
+TODO: ADD this code in some component
+."your__component"::before{
   position: absolute;
-  left: -1.25rem;
-  top: -1.25rem;
-  content: '<h2>';
-  font-family: 'Fasthand', cursive;
-  font-size: 1.375rem;
-  color: #5f5f5f;
-}
-.codeH2::after{
-  position: absolute;
-  left: -1.25rem;
-  bottom: -1.25rem;
-  content: '</h2>';
-  font-family: 'Fasthand', cursive;
-  font-size: 1.375rem;
-  color: #5f5f5f;
-}
-/* Pruebas */
-.image{
-  width: 400px;
-  height: 500px;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 3px solid #BD0C7A;
-  box-shadow: 0px 0px 20px #BD0C7A;
-}
-.image img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-@media screen and (max-width: 840px){
-  .title{
-    height: 4rem;
-    font-size: 4rem;
-  }
-}
-
-@media screen and (max-width: 675px){
-  .title{
-    height: 3rem;
-    font-size: 3rem;
-  }
-}
-
-@media screen and (max-width: 542px){
-  .title{
-    height: 2rem;
-    font-size: 2rem;
-  }
-  .inicio{
-    margin-left: 10px;
-  }
-  .inicio::before{
-    left: 0;
-  }
-  .codeH1{
-    margin-left: 0;
-  }
-  .codeP{
-    margin-left: 0;
-  }
-}
+  content: '';
+  top: 0px;
+  left: -60px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #00e1ffaf;
+  filter: blur(200px);
+} 
+*/

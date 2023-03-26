@@ -1,14 +1,16 @@
 #root {
   max-width: 1500px;
   margin: 0 auto;
-  position: relative;
-}
-main{
   padding-right: 200px;
 }
 
-@media screen and (max-width: 985px) {
-  main{
+/* @media (max-width: 768px) {
+  #root {
+    padding-right: 0px;
+  }
+} */
+@media screen and (max-width:  985px) {
+  #root {
     padding-right: 0px;
   }
 }
