@@ -20,7 +20,9 @@
     transition: all 0.3s;
   }
   .tittle__color:hover{
+  .tittle__color:hover{
     color: #52ebff;
+    text-shadow: 0px 0px 30px var(--color-blue);
     text-shadow: 0px 0px 30px var(--color-blue);
   }
 /* End Span Title */
@@ -32,6 +34,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
   }
+/* End Buttons Container */
 /* End Buttons Container */
 
 /* Image */

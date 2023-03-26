@@ -11,6 +11,19 @@ export const Main = ({ children }) => <StyledMain> {children} </StyledMain>
 export const Body = ({ children }) => <StyledBody> {children} </StyledBody>
 export const H1 = ({ children }) => <StyledH1> {children} </StyledH1>
 export const H2 = ({ children }) => <StyledH2 > {children} </StyledH2>
+import styled, { css } from "styled-components";
+
+export const P = ({ gray, children }) => {
+  return gray
+    ? <StyledP gray> {children} </StyledP>
+    : <StyledP> {children} </StyledP>
+}
+export const Section = ({ children }) => <StyledSection> {children} </StyledSection>
+export const Sector = ({ children }) => <StyledSector> {children} </StyledSector>
+export const Main = ({ children }) => <StyledMain> {children} </StyledMain>
+export const Body = ({ children }) => <StyledBody> {children} </StyledBody>
+export const H1 = ({ children }) => <StyledH1> {children} </StyledH1>
+export const H2 = ({ children }) => <StyledH2 > {children} </StyledH2>
 
 const StyledMain = styled.div`
   position: relative;
