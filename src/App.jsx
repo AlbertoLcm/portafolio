@@ -1,21 +1,24 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
-import GlobalStyles from './styles/GlobalStyles'
 import Home from './components/Home'
 import colors from './colors'
-import './App.css'
+import './styles/App.css'
 
 function App() {
 
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
 
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
+  useEffect(() => {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  }, []);
 
   return (
     <ThemeProvider theme={colors[theme]}>
-      <GlobalStyles />
+      <meta name="theme-color" content={theme === 'dark' ? '#011A30' : '#F3F3F3'} />
       <div className="App">
         <Home />
       </div>
