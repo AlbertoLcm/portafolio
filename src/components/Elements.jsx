@@ -5,25 +5,40 @@ export const P = ({ gray, children }) => {
     ? <StyledP gray> {children} </StyledP>
     : <StyledP> {children} </StyledP>
 }
-export const Card = ({ green, blue, orange, children }) => {
-  return green
-    ? <StyledCard green> {children} </StyledCard>
-    : blue
-      ? <StyledCard blue> {children} </StyledCard>
-      : orange
-        ? <StyledCard orange> {children} </StyledCard>
-        : <StyledCard> {children} </StyledCard>
+export const Card = ({ children }) => {
+  return <StyledCard> {children} </StyledCard>
 }
 export const Main = ({ children }) => <StyledMain> {children} </StyledMain>
 export const Section = ({ children }) => <StyledSection> {children} </StyledSection>
 export const Body = ({ children }) => <StyledBody> {children} </StyledBody>
 export const H1 = ({ children }) => <StyledH1> {children} </StyledH1>
-export const H2 = ({ children }) => <StyledH2 > {children} </StyledH2>
+export const H2 = ({ children }) => <StyledH2> {children} </StyledH2>
+export const Other = ({ name, children }) => <StyledOther name={name}> {children} </StyledOther>
+
+const StyledOther = styled.section`
+  position: relative;
+  padding: 35px 0px 35px 25px;
+  &::before{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    content: '<${props => props.name}>';
+    font-family: 'Fasthand', cursive;
+    font-size: 1rem;
+    color: #5f5f5f;
+  }
+  &::after{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    content: '</${props => props.name}>';
+    font-family: 'Fasthand', cursive;
+    font-size: 1rem;
+    color: #5f5f5f;
+  }
+`;
 
 const StyledCard = styled.div`
-  // ${props => props.green && css` background-color: #00c23a; `}
-  // ${props => props.blue && css` background-color: #0051ff; `}
-  // ${props => props.orange && css` background-color: orange; `} 
   position: relative;
   display: flex;
   flex-direction: column;
@@ -45,7 +60,7 @@ const StyledCard = styled.div`
     transition: all 0.3s;
   }
   &:hover::before{
-    background-color: transparent;
+    background-color: #f3f3f31a;
   }
 `;
 const StyledSection = styled.section`
@@ -72,7 +87,7 @@ const StyledSection = styled.section`
 `;
 const StyledMain = styled.div`
   position: relative;
-  padding: 50px 20px 50px 40px;
+  padding: 50px 0px 50px 40px;
   &::before{
     position: absolute;
     left: 20px;
@@ -175,6 +190,7 @@ const StyledH2 = styled.h2`
 `;
 const StyledP = styled.p`
   ${props => props.gray && css`
+    font-size: 1.1em;
     color: #5f5f5f;
   `}
   position: relative;

@@ -1,28 +1,27 @@
 :root {
-  font-family: Quicksand, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Quicksand, system-ui;
   line-height: 1.5;
-  font-weight: 400;
-  font-size: 20px;
 
   color-scheme: light dark;
-  color: #F3F3F3;
-  background-color: #011A30;
-  
+  color: #f3f3f3;
+  background-color: #011a30;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --color-pink: #BD0C7A;
-  --color-blue: #00E1FF;
+  --color-pink: #bd0c7a;
+  --color-blue: #00e1ff;
   --color-orange: orange;
+  --color-background: #011a30;
 }
 
 body {
   position: relative;
   margin: 0;
-  margin-right: 200px;
+  margin-right: 210px;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -43,39 +42,54 @@ body {
 }
 /* Selection */
 ::selection {
-  background-color: #BD0C7A;
-  color: #F3F3F3;
+  background-color: #bd0c7a;
+  color: #f3f3f3;
 }
 h1 {
-  font-family: 'Righteous';
-  font-size: 4em;
+  font-family: "Righteous";
+  font-size: 5em;
   margin: 0;
 }
 h2 {
-  font-family: 'Righteous';
-  font-size: 2.8em;
+  font-family: "Righteous";
+  font-size: 4em;
   margin: 0;
 }
 p {
+  font-size: 1em;
   margin: 0;
 }
-button{
+button {
   width: 170px;
   border-radius: 20px;
-  font-family: 'Quicksand';
-  font-size: 0.9em;
+  font-family: "Quicksand";
+  font-size: 1em;
   padding: 10px;
   border: none;
   cursor: pointer;
   user-select: none;
 }
-button:active{
+button:active {
   transform: scale(0.95);
 }
-progress { background-color: #011A30; height: 10px; width: 100%; border-radius: 10px; color: #000000;}
-progress::-webkit-progress-bar { background-color: #022e55; border-radius: 10px;}
-progress::-webkit-progress-value { background: var(--color-blue); border-radius: 10px;}
-progress::-moz-progress-bar { background: #cb5700; border-radius: 10px;}
+progress {
+  background-color: #011a30;
+  height: 7px;
+  width: 100%;
+  color: #000000;
+}
+progress::-webkit-progress-bar {
+  background-color: #022e55;
+  border-radius: 3px;
+}
+progress::-webkit-progress-value {
+  background: linear-gradient(45deg, var(--color-pink), var(--color-orange));
+  border-radius: 3px;
+}
+progress::-moz-progress-bar {
+  background: linear-gradient(45deg, var(--color-pink), var(--color-orange));
+  border-radius: 3px;
+}
 
 /* @media (prefers-color-scheme: light) {
   :root {
@@ -88,13 +102,13 @@ progress::-moz-progress-bar { background: #cb5700; border-radius: 10px;}
   h1 {
     font-size: 3em;
   }
-  :root {
-    font-size: 18px;
+  h2 {
+    font-size: 3em;
   }
 }
 
 /* Hidden Header */
-@media screen and (max-width:  1050px) {
+@media screen and (max-width: 1050px) {
   body {
     margin-right: 0;
   }
