@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider, createTheme } from "@mui/material";
 import Home from './components/Home'
 import colors from './colors'
 import './styles/App.css'
@@ -16,8 +16,18 @@ function App() {
     }
   }, []);
 
+  const darkTheme = createTheme({
+    palette: {
+      mode: 'dark',
+      primary: {
+        main: '#00e1ff',
+      },
+    },
+  });
+
   return (
-    <ThemeProvider theme={colors[theme]}>
+    <ThemeProvider theme={darkTheme}>
+
       <meta name="theme-color" content={theme === 'dark' ? '#011A30' : '#F3F3F3'} />
       <div className="App">
         <Home />

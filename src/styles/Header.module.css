@@ -58,10 +58,17 @@
     transition: all 0.3s;
     text-decoration: none;
     padding: 7px 0px 7px 0px;
-    font-size: 0.8rem;
   }
   .nav__header ul li:not(:last-child) {
     border-bottom: 2px solid #f3f3f313;
+  }
+  .icons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
   }
 /* End Principal Header */
 
