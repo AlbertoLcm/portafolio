@@ -5,8 +5,8 @@ export const P = ({ gray, children }) => {
     ? <StyledP gray> {children} </StyledP>
     : <StyledP> {children} </StyledP>
 }
-export const Card = ({ children }) => {
-  return <StyledCard> {children} </StyledCard>
+export const Card = ({ title, description, image }) => {
+  return <StyledCard image={image}>  </StyledCard>
 }
 export const Main = ({ children }) => <StyledMain> {children} </StyledMain>
 export const Section = ({ children }) => <StyledSection> {children} </StyledSection>
@@ -44,9 +44,14 @@ const StyledCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   height: 200px;
   padding: 20px;
   z-index: -1;
+  background-image: url(${props => props.image});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   &::before{
     position: absolute;
     cursor: pointer;
@@ -55,12 +60,12 @@ const StyledCard = styled.div`
     left: 0px;
     width: 100%;
     height: 100%;
-    background-color: #0000002d;
+    background-color: #000000a8;
     z-index: 1;
     transition: all 0.3s;
   }
   &:hover::before{
-    background-color: #f3f3f31a;
+    background-color: transparent;
   }
 `;
 const StyledSection = styled.section`

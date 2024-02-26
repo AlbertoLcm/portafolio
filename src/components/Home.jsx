@@ -8,6 +8,7 @@ import Header from "./Header";
 import icons from "../assets/Icons.svg";
 import { TextField } from "@mui/material";
 import marker from "../assets/marker.svg";
+import { projects } from "../helpers/data";
 
 function Home() {
   return (
@@ -58,9 +59,14 @@ function Home() {
             <H2>Portafolio.</H2>
             <Section>
               <section className={styles.cards__container}>
-                <Card green={true}>Hola</Card>
-                <Card blue={true}>Hola</Card>
-                <Card orange={true}>Hola</Card>
+                {projects.map((project, index) => (
+                  <Card
+                    key={index}
+                    title={project.name}
+                    description={project.description}
+                    image={project.image}
+                  />
+                ))}
               </section>
             </Section>
           </section>
@@ -70,7 +76,7 @@ function Home() {
               <div>
                 <H2>Habilidades y Experiencia.</H2>
                 <P>
-                  A los 20 años de edad, comencé a trabajar de manera
+                  A los 19 años de edad, comencé a trabajar de manera
                   independiente en proyectos de desarrollo web. Durante el
                   último año de mi carrera como ingeniero en sistemas, tuve la
                   oportunidad de trabajar en una empresa desarrollando
